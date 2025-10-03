@@ -10,6 +10,10 @@ Notes:
   - This is a FULL reload: TRUNCATE each table, then BULK INSERT from CSV.
   - Re-runnable/destructive: TRUNCATE removes all rows quickly and resets
     identity values (if any) and requires no referencing FKs on these tables.
+
+Attribution:
+    This script was developed as part of a learning project based on a tutorial by DataWithBaraa.
+    For more details and source reference, see the project README.
 ================================================================================
 */
 
