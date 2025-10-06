@@ -1,33 +1,36 @@
 /*
 ================================================================================
-Create Database and Schema
+Create Database and Schemas: DataWarehouse
 ================================================================================
 Script Purpose:
-    This script creates a new database named 'DataWarehouse' after checking if it already exists.
-    If the database exists, it is dropped and recreated. The script also sets up three schemas
-    within the database: 'bronze', 'silver', and 'gold'.
+    - Creates a new database named 'DataWarehouse' after verifying if it already exists.
+    - If the database exists, it is dropped and recreated.
+    - Sets up three schemas within the database:
+        1. bronze — stores raw, unprocessed data
+        2. silver — stores cleaned and transformed data
+        3. gold   — stores curated, analytics-ready data
 
 WARNING:
-    Running this script will drop the entire 'DataWarehouse' database if it exists.
-    All data in the database will be permanently deleted. Proceed with caution and ensure you have
-    proper backups before running this script. 
+	Running this script will DROP the existing 'DataWarehouse' database (if present).
+       All data in it will be permanently deleted.
+       Ensure proper backups exist before running this script.
 
 Attribution:
-    This script was developed as part of a learning project based on a tutorial by DataWithBaraa.
-    For more details and source reference, see the project README.
+    This script was developed as part of a learning project based on
+    DataWithBaraa’s tutorials. For source details, refer to the project README.
 ================================================================================
 */
 
--- Switch to the 'master' database
-USE master;
+-- Switch to the 'master' database 
+USE master; 
 GO
 
--- Drop and recreate the 'DataWarehouse' database
-IF EXISTS (SELECT 1 FROM sys.databases WHERE name = 'DataWarehouse')
+-- Drop and recreate the 'DataWarehouse' database 
+IF EXISTS (SELECT 1 FROM sys.databases WHERE name = 'DataWarehouse') 
 BEGIN 
-	ALTER DATABASE DataWarehouse SET SINGLE_USER WITH ROLLBACK IMMEDIATE;
-	DROP DATABASE DataWarehouse;
-END;
+	ALTER DATABASE DataWarehouse SET SINGLE_USER WITH ROLLBACK IMMEDIATE; 
+	DROP DATABASE DataWarehouse; 
+END; 
 GO
 
 -- Create a new database named 'DataWarehouse'
