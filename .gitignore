@@ -1,0 +1,16 @@
+# Ignore system files
+.DS_Store
+Thumbs.db
+
+# Logs and temp files
+*.log
+*.tmp
+
+# SQL Server backups
+*.bak
+
+# Data files (optional, depends on your plan)
+
+
+# Draw.io files (your case)
+*.drawio
