@@ -53,7 +53,7 @@ BEGIN
 				WHEN 'M' THEN 'Male' 
 				WHEN 'F' THEN 'Female' 
 				ELSE 'n/a' END AS cst_gndr,
-			CASE UPPER(TRIM(cst_gndr)) 
+			CASE UPPER(TRIM(cst_marital_status)) 
 				WHEN 'M' THEN 'Married' 
 				WHEN 'S' THEN 'Single' 
 				ELSE 'n/a' END AS cst_marital_status,
