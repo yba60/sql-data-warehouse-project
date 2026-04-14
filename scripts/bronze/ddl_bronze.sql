@@ -1,9 +1,18 @@
 /*
-============================================================
-Script Name	: bronze_ddl.dql
-Layer		: Bronze
-Purpose		: Create raw ingestion tables for CRM and ERP sources
-============================================================
+===============================================================================
+Script Name      : ddl_bronze.sql
+Object Type      : DDL Script
+Layer            : Bronze
+Schema           : bronze
+Purpose          : Create raw ingestion tables for CRM and ERP source data.
+Description      : Creates the bronze schema if it does not already exist and
+                   recreates the raw landing tables used to store source data
+                   from CRM and ERP files without business transformations.
+Source Systems   : CRM, ERP
+Dependencies     : None
+Notes            : Intended for initial setup or full rebuild of bronze objects.
+Author           : Ryan Bai
+===============================================================================
 */
 
 IF NOT EXISTS (SELECT 1 FROM sys.schemas WHERE name = 'bronze')

@@ -1,9 +1,18 @@
 /*
-============================================================
-Script Name	: silver_ddl.dql
-Layer		: Silver
-Purpose		: Create raw ingestion tables for CRM and ERP sources
-============================================================
+===============================================================================
+Script Name      : ddl_silver.sql
+Object Type      : DDL Script
+Layer            : Silver
+Schema           : silver
+Purpose          : Create cleaned and standardized tables for transformed data.
+Description      : Creates the silver schema if it does not already exist and
+                   recreates the silver tables used to store validated,
+                   standardized, and transformation-ready data from bronze.
+Source Systems   : CRM, ERP
+Dependencies     : bronze layer
+Notes            : Includes dwh_create_date columns for warehouse load tracking.
+Author           : Ryan Bai
+===============================================================================
 */
 
 IF NOT EXISTS (SELECT 1 FROM sys.schemas WHERE name = 'silver')

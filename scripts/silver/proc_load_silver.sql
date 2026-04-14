@@ -1,9 +1,18 @@
 /*
-============================================================
-Procedure Name	: proc_load_silver.sql
-Layer			: Silver
-Purpose			:
-============================================================
+===============================================================================
+Script Name      : proc_load_silver.sql
+Object Type      : Stored Procedure
+Layer            : Silver
+Schema           : silver
+Purpose          : Transform and load cleansed data from bronze into silver tables.
+Description      : Truncates silver tables and loads transformed data from the
+                   bronze layer by applying cleansing, standardization,
+                   deduplication, validation, and business transformation rules.
+Source Systems   : CRM, ERP
+Dependencies     : bronze tables, silver tables
+Notes            : Designed for full reloads of silver data.
+Author           : Ryan Bai
+===============================================================================
 */
 
 CREATE OR ALTER PROCEDURE silver.load_silver

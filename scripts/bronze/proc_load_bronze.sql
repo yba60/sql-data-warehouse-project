@@ -1,9 +1,18 @@
 /*
-============================================================
-Procedure Name	: proc_load_bronze.sql
-Layer			: Bronze
-Purpose			: Load raw data from CRM and ERP source file into bronze tables
-============================================================
+===============================================================================
+Script Name      : proc_load_bronze.sql
+Object Type      : Stored Procedure
+Layer            : Bronze
+Schema           : bronze
+Purpose          : Load raw CRM and ERP source files into bronze tables.
+Description      : Truncates existing bronze tables and performs bulk inserts
+                   from source CSV files into the raw ingestion layer while
+                   logging table-level and batch-level load durations.
+Source Systems   : CRM, ERP
+Dependencies     : bronze tables, source CSV files in project dataset folder
+Notes            : Designed for full reloads of bronze data.
+Author           : Ryan Bai
+===============================================================================
 */
 
 CREATE OR ALTER PROCEDURE bronze.load_bronze 

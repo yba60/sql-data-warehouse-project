@@ -1,8 +1,21 @@
 /*
-============================================================
-Script: init_database.sql
-
-============================================================
+===============================================================================
+Script Name      : init_database.sql
+Object Type      : Setup Script
+Layer            : N/A (Environment Setup)
+Schema           : N/A
+Purpose          : Initialize and reset the DataWarehouse database environment.
+Description      : Drops the existing DataWarehouse database if it exists,
+                   recreates it from scratch, and sets up the Medallion
+                   architecture schemas (bronze, silver, gold).
+Source Systems   : N/A
+Dependencies     : None
+Notes            : 
+    - This script will permanently delete the existing DataWarehouse database.
+    - Intended for development and testing only (NOT for production use).
+    - Safely handles active connections using SINGLE_USER mode.
+Author           : Ryan Bai
+===============================================================================
 */
 
 Use master;

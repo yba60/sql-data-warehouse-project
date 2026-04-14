@@ -1,3 +1,20 @@
+/*
+===============================================================================
+Script Name      : ddl_gold.sql
+Object Type      : View Definition Script
+Layer            : Gold
+Schema           : gold
+Purpose          : Create analytical dimension and fact views for reporting.
+Description      : Recreates the gold-layer presentation objects as views using
+                   a star-schema design, including dimension views for customers
+                   and products and a fact view for sales analysis.
+Source Systems   : CRM, ERP (via silver layer)
+Dependencies     : silver tables, gold schema
+Notes            : Gold objects are implemented as views rather than physical tables.
+Author           : Ryan Bai
+===============================================================================
+*/
+
 IF OBJECT_ID('gold.dim_customers', 'V') IS NOT NULL 
 	DROP VIEW gold.dim_customers;
 GO
